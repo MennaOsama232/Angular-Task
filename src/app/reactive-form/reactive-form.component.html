@@ -1,0 +1,30 @@
+<br><br>
+<div class="card border-success m  text-center position-absolute top-50 start-50 translate-middle" style="max-width: 18rem;">
+    <div class="card-header text-success-emphasis">Form</div>
+    <div class="card-body text-success">
+        <form [formGroup]="myRegFormValid" class="form" (ngSubmit)="getData()">
+            <div class="mb-3">
+
+                <input formControlName="name" type="text" class="form-control" placeholder="Enter Name">
+                <div class=" alert alert-success" *ngIf="!NameValid">
+                    <p>Name Required !!</p>
+                </div>
+            </div>
+            <div class="mb-3">
+
+                <input formControlName="age" type="number" class="form-control" placeholder="Enter Age">
+            </div>
+            <div class="alert alert-success" *ngIf="!AgeValid">
+                <p> 20 &lt; Age &lt; 40</p>
+            </div>
+            <div class="mb-3">
+
+                <input formControlName="email" type="email" class="form-control" placeholder="Enter Email">
+            </div>
+            <div class="alert alert-success text-center" *ngIf="!EmailValid">
+                <p> Email required!</p>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Submit</button>
+        </form>
+    </div>
+</div>

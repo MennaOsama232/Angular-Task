@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students;let isEven=even" [style.background-color]="isEven?'#ddd':''">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.address}}</td>
+
+        </tr>
+    </tbody>
+</table>

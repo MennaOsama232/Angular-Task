@@ -1,0 +1,34 @@
+<div class="mx-auto py-4">
+    <div class="mb-3">
+        <label for="InputName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="InputName" [(ngModel)]="name">
+
+    </div>
+    <div *ngIf="!(name.length>3); else TrueValue">
+        <h4 *ngIf="name" class="text-danger">False Input</h4>
+    </div>
+
+    <ng-template #TrueValue>
+        <div *ngIf="name">
+            <h4 class="text-success">True Input</h4>
+        </div>
+    </ng-template>
+
+    <div class="mb-3">
+        <label for="InputAge" class="form-label">Age</label>
+        <input type="number" class="form-control" id="InputAge" [(ngModel)]="age">
+
+    </div>
+
+    <div *ngIf="!(age>20 && age<40); else TrueValue">
+        <h4 *ngIf="age" class="text-danger">False Input</h4>
+    </div>
+
+    <ng-template #TrueValue>
+        <div *ngIf="age">
+            <h4 class="text-success">True Input</h4>
+        </div>
+    </ng-template>
+
+    <button type="button" class="btn btn-primary" (click)="AddStudent()">Add</button>
+</div>
